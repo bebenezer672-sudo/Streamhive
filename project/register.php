@@ -1,3 +1,34 @@
+<?php
+include 'includes/db.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $user =($_POST['username'] ?? '');
+    $email = ($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if ($user === '' || $email === '' || $password === '') {
+        echo "oei pak het op het is leeg ";
+    }else {
+        
+        $stmt = $conn->prepare('INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)');
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        
+        $stmt->bind_param('sss', $user, $email, $passwordHash);
+    
+        if($stmt->execute()){
+            echo "gelukt";
+        }else 
+        {
+            echo "oei fout ";
+        }
+
+
+        
+    }}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -11,6 +42,8 @@
 <div class="container auth-page">
     <form class="auth-form" action="register.php" method="post">
         <h1>Registreren</h1>
+
+       
 
         <label for="username">Gebruikersnaam</label>
         <input id="username" name="username" type="text" required>

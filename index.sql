@@ -1,5 +1,5 @@
 -- Video Sharing Platform Data Model
-CREATE DATABASE IF NOT EXISTS video_platform;
+CREATE DATABASE video_platform;
 USE video_platform;
 
 CREATE TABLE users (
@@ -17,10 +17,9 @@ CREATE TABLE users (
 
 CREATE TABLE videos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NULL,
+    user_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    filename VARCHAR(255) NOT NULL,
     duration INT,
     views INT DEFAULT 0,
     visibility ENUM('public', 'private') DEFAULT 'public',

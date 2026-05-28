@@ -18,7 +18,7 @@ if ($result) {
 <body>
     <div class="container main-page">
         <div class="hero">
-            <h1>Welkom bij Streamhive</h1>
+            <h1>Streamhive</h1>
             <p>Upload je video, bekijk content en beheer je uploads in één eenvoudige interface.</p>
             <div class="hero-actions">
                 <a class="button" href="register.php">Registreren</a>
@@ -34,14 +34,7 @@ if ($result) {
         </div>
 
         <div class="grid">
-            <a class="card" href="register.php">
-                <h2>Registreer</h2>
-                <p>Maak een account aan en begin met uploaden.</p>
-            </a>
-            <a class="card" href="login.php">
-                <h2>Login</h2>
-                <p>Log in en beheer je content.</p>
-            </a>
+          
             <a class="card" href="admin/upload.php">
                 <h2>Upload video</h2>
                 <p>Upload nieuwe video's naar je platform.</p>

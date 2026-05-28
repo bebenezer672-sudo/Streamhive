@@ -1,3 +1,18 @@
+<?php
+include 'includes/db.php';
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username =($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -12,6 +27,7 @@
     <form class="auth-form" action="login.php" method="post">
         <h1>Inloggen</h1>
 
+     
         <label for="username">Gebruikersnaam</label>
         <input id="username" name="username" type="text" required>
 
